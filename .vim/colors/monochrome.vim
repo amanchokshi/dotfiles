@@ -13,16 +13,16 @@ endif
 
 let g:colors_name = 'monochrome'
 
-let s:white  = ['White', 151]
+let s:white  = ['White', 108]
 let s:black  = ['#0e1111', 16]
-let s:bgray  = ['#181818', 233]
-let s:lgray  = ['LightGray', 248]
-let s:cgray  = ['#737373', 237]
+let s:bgray  = ['#181818', 235]
+let s:lgray  = ['LightGray', 250]
+let s:cgray  = ['#737373', 243]
 let s:dgray  = ['DarkGray', 240]
 let s:sblue  = ['#778899', 109]
 let s:yellow = ['Yellow', 214]
 let s:red    = ['#b6403a', 167]
-let s:green  = ['#478226', 115]
+let s:green  = ['#478226', 114]
 
 let s:default_fg = s:lgray
 let s:default_bg = s:black
@@ -72,16 +72,16 @@ endfunction
 "
 
 call s:hi('Normal')
-call s:hi('Cursor', s:black, s:lgray)
+call s:hi('Cursor', s:cgray, s:lgray)
 call s:hi('CursorLine', s:default_lst, s:bgray, s:none)
-call s:hi('CursorLineNr', s:red, s:default_bg, s:bold)
+call s:hi('CursorLineNr', s:red, s:default_bg)
 call s:hi('ColorColumn', s:default_fg, s:bgray)
-call s:hi('Search', s:white, s:sblue)
-call s:hi('Visual', s:white, s:sblue)
-call s:hi('ErrorMsg', s:white, s:red)
+call s:hi('Search', s:cgray, s:sblue)
+call s:hi('Visual', s:cgray, s:sblue)
+call s:hi('ErrorMsg', s:cgray, s:yellow)
 
 " Tildes at the bottom of a buffer, etc.
-call s:hi('NonText', s:dgray)
+call s:hi('NonText', s:black)
 
 " Folding.
 call s:hi('FoldColumn', s:dgray)
