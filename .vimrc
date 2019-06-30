@@ -100,3 +100,5 @@ set t_vb=
 """" Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Test to see if new ssd on macbookpro works
