@@ -10,7 +10,7 @@ export ZSH="/Users/amanchokshi/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+# ZSH_THEME="TheOne"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -132,9 +132,17 @@ function +vi-git-untracked() {
   fi
 }
 
+
 # Prompt
 PS1="%B%{%F{green}%n %f%}%{%F{white}in%f%} %{%F{red}%1~%f%} \${vcs_info_msg_0_}%{$reset_color%} $ "
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 add-zsh-hook precmd vcs_info
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
+
