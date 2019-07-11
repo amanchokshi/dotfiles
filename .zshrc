@@ -117,24 +117,24 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' disable-patterns "${(b)HOME}/code/portal(|-ee)(|/*)"
-zstyle ':vcs_info:*' stagedstr "%{%F{green}●%f%}"
-zstyle ':vcs_info:*' unstagedstr "%{%F{yellow}●%f%}"
+zstyle ':vcs_info:*' stagedstr "%F{green}●%f"
+zstyle ':vcs_info:*' unstagedstr "%F{yellow}●%f"
 zstyle ':vcs_info:*' use-simple true
 zstyle ':vcs_info:git+set-message:*' hooks git-untracked
-zstyle ':vcs_info:git*:*' formats '%{%F{white}on%f%} %{%F{blue}༄ %b %f%}%c%u'
+zstyle ':vcs_info:git*:*' formats '%F{white}on%f %F{blue}༄ %b %f%c%u'
 zstyle ':vcs_info:git*:*' actionformats ' %b %m%u%c'
 
 # Check for untracked files.
 function +vi-git-untracked() {
   emulate -L zsh
   if [[ -n $(git ls-files --others --exclude-standard 2> /dev/null) ]]; then
-      hook_com[unstaged]+="%{%F{red}●%f%}"
+      hook_com[unstaged]+="%F{red}●%f"
   fi
 }
 
 
 # Prompt
-PS1="%B%{%F{green}%n %f%}%{%F{white}in%f%} %{%F{red}%1~%f%} \${vcs_info_msg_0_}%{$reset_color%} $ "
+PS1="%F{green}%n %f%F{white}in%f %F{red}%1~%f \${vcs_info_msg_0_} %{$reset_color%}$ "
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -145,4 +145,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 add-zsh-hook precmd vcs_info
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
+
+export PATH="/Applications/anaconda3/bin:$PATH"
 
