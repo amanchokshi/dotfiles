@@ -58,3 +58,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 alias ozstar='ssh -Yi ~/.ssh/id_rsa achokshi@ozstar.swin.edu.au'
 
 export PATH="~/.npm-global/bin:$PATH"
+
+rmd () {
+  pandoc $1 | lynx -stdin
+}   

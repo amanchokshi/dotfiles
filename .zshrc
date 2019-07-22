@@ -136,6 +136,7 @@ function +vi-git-untracked() {
 # Prompt
 PS1="%F{green}%n %f%F{white}in%f %F{red}%1~%f \${vcs_info_msg_0_} %{$reset_color%}$ "
 
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
@@ -148,3 +149,9 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 
 export PATH="/Applications/anaconda3/bin:$PATH"
 
+
+### Added by Zplugin's installer
+source '/Users/amanchokshi/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
