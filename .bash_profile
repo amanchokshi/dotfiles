@@ -55,10 +55,12 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
 
-alias ozstar='ssh -Yi ~/.ssh/id_rsa achokshi@ozstar.swin.edu.au'
+# alias ozstar='ssh -Yi ~/.ssh/id_rsa achokshi@ozstar.swin.edu.au'
 
 export PATH="~/.npm-global/bin:$PATH"
 
-rmd () {
-  pandoc $1 | lynx -stdin
-}   
+# sshfs moount
+
+alias ozstar_sshfs="sshfs ozstar:/fred/oz048/achokshi ~/Ozstar/"
+
+export MWA_ASVO_API_KEY=42baa06f-b863-4acf-a30b-85262c43d614
