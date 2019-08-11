@@ -70,8 +70,11 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
         zsh-autosuggestions
-        zsh-syntax-highlighting)
+        zsh-syntax-highlighting
+        vi-mode)
 
+export KEYTIMEOUT=1
+export RPS1="%{$reset_color%}"        
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -231,6 +234,13 @@ SPACESHIP_VENV_COLOR=yellow
 SPACESHIP_EXEC_TIME_PREFIX=""
 SPACESHIP_EXEC_TIME_COLOR=yellow
 SPACESHIP_EXEC_TIME_ELAPSED=300
+
+# vi-mode
+PACESHIP_VI_MODE_PREFIX=""
+SPACESHIP_VI_MODE_SUFFIX=""
+SPACESHIP_VI_MODE_INSERT=""
+SPACESHIP_VI_MODE_NORMAL="❯"
+
 
 
 
