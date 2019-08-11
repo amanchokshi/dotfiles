@@ -64,3 +64,4 @@ export PATH="~/.npm-global/bin:$PATH"
 alias ozstar_sshfs="sshfs ozstar:/fred/oz048/achokshi ~/Ozstar/"
 
 export MWA_ASVO_API_KEY=42baa06f-b863-4acf-a30b-85262c43d614
+
