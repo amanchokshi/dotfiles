@@ -25,6 +25,7 @@ Plug 'ctrlpvim/ctrlp.vim'                           " fuzzy search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " coc Intellisense
 Plug 'junegunn/goyo.vim'                            " Clean Writing env
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'tmux-plugins/vim-tmux'                        " syntax higlighting
 
 
 call plug#end()
