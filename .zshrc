@@ -71,7 +71,8 @@ CASE_SENSITIVE="true"
 plugins=(git
         zsh-autosuggestions
         zsh-syntax-highlighting
-        vi-mode)
+        vi-mode
+        osx)
 
 export KEYTIMEOUT=1
 export RPS1="%{$reset_color%}"        
@@ -241,6 +242,10 @@ SPACESHIP_VI_MODE_SUFFIX=""
 SPACESHIP_VI_MODE_INSERT=""
 SPACESHIP_VI_MODE_NORMAL="❯"
 
+# LS COLORS
+
+LS_COLORS='ro=0:di=34;5:27:ex=32;5;32:'
+export LS_COLORS
 
 
 
@@ -248,6 +253,9 @@ SPACESHIP_VI_MODE_NORMAL="❯"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 
 export PATH="/Applications/anaconda3/bin:$PATH"
+
+
+source /Users/amanchokshi/.ghcup/env
 
 # MacPorts Installer addition on 2019-06-26_at_14:00:09: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
@@ -262,3 +270,8 @@ alias ni='nvim'
 export MWA_ASVO_API_KEY=42baa06f-b863-4acf-a30b-85262c43d614
 
 export LC_ALL=en_US.UTF-8
+
+LS_COLORS='rs=0:di=34;5;27:ex=32;5;32:';
+export LS_COLORS
+
+alias sp='spotify'
