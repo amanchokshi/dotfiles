@@ -275,3 +275,5 @@ LS_COLORS='rs=0:di=34;5;27:ex=32;5;32:';
 export LS_COLORS
 
 alias sp='spotify'
+
+alias icat='imgcat'
