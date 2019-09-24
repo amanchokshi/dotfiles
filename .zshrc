@@ -234,7 +234,7 @@ SPACESHIP_VENV_COLOR=yellow
 # Execution Time 
 SPACESHIP_EXEC_TIME_PREFIX=""
 SPACESHIP_EXEC_TIME_COLOR=yellow
-SPACESHIP_EXEC_TIME_ELAPSED=300
+SPACESHIP_EXEC_TIME_ELAPSED=3600
 
 # vi-mode
 PACESHIP_VI_MODE_PREFIX=""
@@ -264,7 +264,9 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # sshfs mount
 alias ozstar_sshfs="sshfs ozstar:/fred/oz048/achokshi ~/Ozstar/"
 
-alias ni='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
 # export PATH="~/.npm-global/bin:$PATH"
 
 export MWA_ASVO_API_KEY=42baa06f-b863-4acf-a30b-85262c43d614
@@ -277,3 +279,9 @@ export LS_COLORS
 alias sp='spotify'
 
 alias icat='imgcat'
+
+alias topcat='sh /Applications/TOPCAT.app/Contents/Resources/bin/topcat &'
+
+. /Applications/miriad/MIRRC.sh
+export PATH=$MIRBIN:$PATH
+
