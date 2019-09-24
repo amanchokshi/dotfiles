@@ -26,7 +26,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}     " coc Intellisense
 Plug 'junegunn/goyo.vim'                            " Clean Writing env
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'tmux-plugins/vim-tmux'                        " syntax higlighting
-
+Plug 'lervag/vimtex'
+Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -231,3 +232,10 @@ let g:mkdp_port = ''
 " ${name} will be replace with the file name
 let g:mkdp_page_title = '「${name}」'
 
+
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_progname = 'nvr'
+
+let g:polyglot_disabled = ['latex']
+let g:vimtex_view_general_viewer = 'open'
+let g:vimtex_view_general_options = '-a Skim'
