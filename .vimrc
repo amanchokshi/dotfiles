@@ -33,6 +33,7 @@ Plug 'chriskempson/base16-vim'
 " base-16 lightline
 Plug 'daviesjamie/vim-base16-lightline'
 
+
 call plug#end()
 
 
@@ -67,7 +68,7 @@ set smartindent         " even better autoindent (e.g. add indent after '{')
 
 """" Vim Appearance 
 
-silent e                " hide filename in last line
+"silent e                " hide filename in last line
 set t_Co=256            " define number of colors
 set noshowmode          " don't show 'old status' in last line
 set background=dark     " define initial background (light/dark)
@@ -115,3 +116,4 @@ set t_vb=
 """" Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
