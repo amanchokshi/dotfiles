@@ -239,3 +239,7 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:polyglot_disabled = ['latex']
 let g:vimtex_view_general_viewer = 'open'
 let g:vimtex_view_general_options = '-a Skim'
+
+""copy paste stuff
+"vnoremap <C-c> "+y
+"map <C-v> "+P
