@@ -158,6 +158,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # Spaceship Theme
 
 SPACESHIP_PROMPT_ORDER=(
+  conda         # conda virtualenv section
   venv          # virtualenv section
   time          # Time stamps section
   user          # Username section
@@ -178,7 +179,6 @@ SPACESHIP_PROMPT_ORDER=(
   julia         # Julia section
   docker        # Docker section
   aws           # Amazon Web Services section
-  conda         # conda virtualenv section
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
@@ -233,6 +233,12 @@ SPACESHIP_VENV_SUFFIX=" » "
 SPACESHIP_VENV_GENERIC_NAMES=()
 SPACESHIP_VENV_COLOR=yellow
 
+# Conda environment stuff
+SPACESHIP_CONDA_SHOW=True
+SPACESHIP_CONDA_SUFFIX=" » "
+SPACESHIP_CONDA_SYMBOL="༄ "
+SPACESHIP_CONDA_COLOR=blue
+
 # Execution Time 
 SPACESHIP_EXEC_TIME_PREFIX=""
 SPACESHIP_EXEC_TIME_COLOR=yellow
@@ -254,7 +260,7 @@ export LS_COLORS
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
 
-export PATH="/Applications/anaconda3/bin:$PATH"
+# export PATH="/Applications/anaconda3/bin:$PATH"  # commented out by conda initialize
 
 
 source /Users/amanchokshi/.ghcup/env
@@ -264,7 +270,8 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # sshfs mount
-alias ozstar_sshfs="sshfs ozstar:/fred/oz048/achokshi ~/Ozstar/"
+alias ozstar_sshfs="sshfs -o volname=Ozstar ozstar:/fred/oz048/achokshi ~/Ozstar/"
+alias ucalegon_sshfs="sshfs -o volname=Ucalegon ucalegon:/media/achokshi/satellites/ ~/Ucalegon/"
 
 alias vi='nvim'
 alias vim='nvim'
@@ -286,4 +293,20 @@ alias topcat='sh /Applications/TOPCAT.app/Contents/Resources/bin/topcat &'
 
 . /Applications/miriad/MIRRC.sh
 export PATH=$MIRBIN:$PATH
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Applications/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Applications/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Applications/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
