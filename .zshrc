@@ -238,11 +238,11 @@ SPACESHIP_CONDA_SHOW=True
 SPACESHIP_CONDA_SUFFIX=" » "
 SPACESHIP_CONDA_SYMBOL="༄ "
 SPACESHIP_CONDA_COLOR=blue
-
+SPACESHIP_CONDA_VERBOSE=false
 # Execution Time 
 SPACESHIP_EXEC_TIME_PREFIX=""
 SPACESHIP_EXEC_TIME_COLOR=yellow
-SPACESHIP_EXEC_TIME_ELAPSED=3600
+SPACESHIP_EXEC_TIME_ELAPSED=60
 
 # vi-mode
 PACESHIP_VI_MODE_PREFIX=""
@@ -252,8 +252,8 @@ SPACESHIP_VI_MODE_NORMAL="❯"
 
 # LS COLORS
 
-LS_COLORS='ro=0:di=34;5:27:ex=32;5;32:'
-export LS_COLORS
+#LS_COLORS='ro=0:di=34;5:27:ex=32;5;32:'
+#export LS_COLORS
 
 
 
@@ -268,22 +268,28 @@ source /Users/amanchokshi/.ghcup/env
 # MacPorts Installer addition on 2019-06-26_at_14:00:09: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
+    
+#export CPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include    
 
 # sshfs mount
 alias ozstar_sshfs="sshfs -o volname=Ozstar ozstar:/fred/oz048/achokshi ~/Ozstar/"
 alias ucalegon_sshfs="sshfs -o volname=Ucalegon ucalegon:/media/achokshi/satellites/ ~/Ucalegon/"
+alias ucal_sshfs="sshfs -o volname=Ucalegon ucal:/media/achokshi/satellites/ ~/Ucalegon/"
 
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+
+alias p='python'
+alias ip='ipython'
+alias c='conda'
+alias ca='conda activate'
 
 # export PATH="~/.npm-global/bin:$PATH"
 
 export MWA_ASVO_API_KEY=42baa06f-b863-4acf-a30b-85262c43d614
 
 export LC_ALL=en_US.UTF-8
-
-LS_COLORS='rs=0:di=34;5;27:ex=32;5;32:';
-export LS_COLORS
 
 alias sp='spotify'
 
@@ -310,3 +316,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias casa='/Applications/CASA.app/Contents/MacOS/casa'
+
+#alias tiles2='ssh pi@10.128.12.5'
+
+export LS_COLORS='exfxcxdxcxegedabageaea'
+
+alias pip2='/Users/amanchokshi/Library/Python/2.7/bin/pip2.7'
+
+#export PYTHONPATH=$PYTHONPATH:/Users/amanchokshi/Documents/Melbourne/mwa-beam/MWA_Beam/mwa_pb/:$PYTHONPATH

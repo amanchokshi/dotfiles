@@ -9,6 +9,14 @@ endif
 
 
 """ Vim-Plug
+
+" Install Vim Plug if not installed
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 call plug#begin()
 
 " Aesthetics
@@ -28,6 +36,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'tmux-plugins/vim-tmux'                        " syntax higlighting
 Plug 'lervag/vimtex'
 Plug 'neomake/neomake'
+Plug 'Chiel92/vim-autoformat'
+Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
+Plug 'chrisbra/Colorizer'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 
 call plug#end()
 
@@ -58,7 +71,6 @@ set softtabstop=4       " number of spaces in tab when editing
 
 set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
-
 
 
 """" Vim Appearance 
@@ -118,6 +130,9 @@ set updatetime=28
 
 " Paste outside vim
 set clipboard=unnamed
+
+" yapf python formatter
+let g:formatter_yapf_style = 'pep8'
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -240,6 +255,51 @@ let g:polyglot_disabled = ['latex']
 let g:vimtex_view_general_viewer = 'open'
 let g:vimtex_view_general_options = '-a Skim'
 
-""copy paste stuff
-"vnoremap <C-c> "+y
-"map <C-v> "+P
+" Vim html closetag
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+
+
+" emmet
+let g:user_emmet_mode='a'    "enable all function in all mode.
+
+" Colorizer
+:let g:colorizer_auto_filetype='css,html'
